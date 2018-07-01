@@ -1,0 +1,18 @@
+#!/bin/bash
+# Parallel job using 1 processors:
+#SBATCH -N 1 # number of nodes
+#SBATCH --ntasks-per-node=20 # number of processors per node
+#SBATCH -t 01:00:00 # run for 3 hours max
+#SBATCH --mail-type=begin # send email when process begins...
+#SBATCH --mail-type=end # ...and when it ends...
+#SBATCH --mail-type=fail # ...or when it fails.
+#SBATCH --mail-user=joshuajw@princeton.edu # Don’t forget to define your email!
+# Load openmpi environment
+module load openmpi
+# Make sure you are in the correct directory
+cd ~/
+
+for nx in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+do
+   ./main_omp $nx  
+done

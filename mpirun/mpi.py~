@@ -1,0 +1,9 @@
+import numpy as np
+import matplotlib.pyplot as pp
+
+p,t=np.loadtxt("dat.dat",unpack=True)
+
+num=[0]*20
+times=[0]*20
+
+for val in p
